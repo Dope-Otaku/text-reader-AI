@@ -17,7 +17,6 @@ import json
 
 # Load environment variables from .env file (if any)
 load_dotenv()
-
 # allow local development ports
 origins = [
     "http://localhost",
@@ -75,6 +74,7 @@ def get_vectorstore(chunks):
 '''
 this function is used to get the conversation chain and returns conversation chain you can use chatopenai or huggingfacehub
 '''
+
 def get_conversation_chain(vectorstore):
     # llm = ChatOpenAI()
     llm = HuggingFaceHub(repo_id="google/flan-t5-xl", model_kwargs={"temperature":0.5, "max_length": 512})
